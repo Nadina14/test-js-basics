@@ -8,8 +8,8 @@ function riempiArray(numeroElementi, valoreMinimo, valoreMassimo){
     };
     return array;
 }
-let arrayCasuale = riempiArray(10, 2, 50);
-console.log(arrayCasuale); 
+/* let arrayCasuale = riempiArray(10, 2, 50);
+console.log(arrayCasuale);  */
 
 let contaPariDispari = (array) => {
         let obj = {
@@ -25,5 +25,6 @@ let contaPariDispari = (array) => {
         }
         return obj ;
     }
-let conteggio = contaPariDispari(arrayCasuale);
+/* let conteggio = contaPariDispari(arrayCasuale);
 console.log(conteggio);
+ */
