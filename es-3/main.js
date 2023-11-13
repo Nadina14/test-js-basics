@@ -16,37 +16,30 @@ window.addEventListener('load', () => {
     });
 }); 
 
-/* BONUS */
-/* window.addEventListener('load', () => {
+/* BONUS 
+window.addEventListener('load', () => {
     const btn = document.getElementById('bottoneInvio');
     btn.addEventListener('click', () => {
-        function analizzaTesto(testo) {
-            const risultato = {
-                originale: testo,
-                minuscolo: testo.toLowerCase(),
-                senzaSpazi: testo.trim(),
-                numeroCaratteri: testo.length,
-                contieneJS: testo.includes('JS' || 'JavaScript'),
-                invertito: giraParola(testo)
-            }
-            return risultato;
-        }
-        const giraParola = (x) => {
-            let parolaGirata = '';
-            for (let i = x.length - 1; i >= 0; i--) {
-                parolaGirata += x[i];
-            }
-            return parolaGirata;
-        };
         const input = document.getElementById('testoUtente');
-        const inputUtente = input.value;
-        const r = analizzaTesto(inputUtente);
-        console.log(r);
-        let p = document.getElementById('risultato');
-        if(input.value != ''){
-            document.body.innerHTML += `<ul><li>${Object.keys(risultato) , Object.values(risultato)}</li><li>${Object.keys(risultato) , Object.values(risultato)}</li><li>${Object.keys(risultato) , Object.values(risultato)}</li></ul>`;
+        const valore = input.value;
+        if(valore === ''){
+            alert('Inserisci del testo prima di inviare!');
         }else {
-            alert('Inserisci una parola prima di inviare!');
-        }
-    })
-}) */
+            const p = document.createElement('p');
+            const testoAnalizzato = analizzaTesto(valore);
+            const coppieChiaveValore = Object.entries(testoAnalizzato);
+            const ul = document.createElement('ul');
+            for(let i = 0; i < coppieChiaveValore.length; i++){
+                const coppia = coppieChiaveValore[i];
+                const chiave = coppia[0];
+                const valore = coppia[1];
+                const li = document.createElement('li');
+                li.innerText = `${chiave}: ${valore}`;
+                ul.appendChild(li);
+            };
+            p.appendChild(ul);
+            document.body.appendChild(p);
+            input.value = '';
+        };
+    });
+}); */
