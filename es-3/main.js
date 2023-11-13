@@ -4,14 +4,17 @@ window.addEventListener('load', () => {
     const btn = document.getElementById('bottoneInvio');
     btn.addEventListener('click', () => {
         const input = document.getElementById('testoUtente');
-        const p = document.getElementById('risultato');
-        if(input.value != ''){
-            p.innerHTML += input.value;
+        const valore = input.value;
+        if(valore === ''){
+            alert('Inserisci del testo prima di inviare!');
         }else {
-            alert('Inserisci una parola prima di inviare!');
-        }
-    })
-}) 
+            const p = document.createElement('p');
+            p.innerText = valore;
+            document.body.appendChild(p);
+            input.value = '';
+        };
+    });
+}); 
 
 /* BONUS */
 /* window.addEventListener('load', () => {
