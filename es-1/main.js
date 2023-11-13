@@ -5,7 +5,7 @@ const analizzaTesto = (testo) => {
     obj.originale = testo,
     obj.minuscolo = testo.toLowerCase();
     obj.senzaSpazi = testo.trim();
-    obj.numeroCaratteri = testo.length;
+    obj.numeroCaratteri = obj.senzaSpazi.length;
     obj.contieneJS = testo.includes('JS' || 'JavaScript');
     obj.invertita = '';
     for (let i = testo.length - 1; i >= 0; i--) {
